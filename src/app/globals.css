@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --green-primary: #39B54A;
+  --green-dark: #2D9139;
+  --green-light: #6DD475;
+  --green-pale: #F0FBF2;
+  --black: #111111;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #111111;
+  background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #39B54A;
+  border-radius: 3px;
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, #39B54A 0%, #2D9139 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass effect */
+.glass {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Section padding */
+.section-padding {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
+
+/* Premium button styles */
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-7 py-3.5 bg-gradient-to-r from-cz-green to-cz-green-dark text-white font-semibold rounded-lg shadow-green-sm hover:shadow-green-md transition-all duration-300 hover:-translate-y-0.5 text-sm tracking-wide;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-7 py-3.5 border-2 border-cz-green text-cz-green font-semibold rounded-lg hover:bg-cz-green hover:text-white transition-all duration-300 hover:-translate-y-0.5 text-sm tracking-wide;
+  }
+  .section-tag {
+    @apply inline-flex items-center gap-2 text-cz-green text-sm font-semibold tracking-widest uppercase mb-4;
+  }
+  .section-title {
+    @apply font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-cz-black leading-tight;
+  }
+  .section-subtitle {
+    @apply text-cz-gray text-lg leading-relaxed max-w-2xl;
+  }
+}
